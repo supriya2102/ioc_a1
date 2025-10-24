@@ -1,37 +1,49 @@
-ROS2 Talker & Listener (Python)
+🧠 Emotion Detection using Python + OpenCV + FER
 📖 Overview
 
-This mini-project demonstrates basic Publisher–Subscriber communication in ROS2 using Python’s rclpy library.
-It includes two nodes:
+This project detects human emotions in real-time using your webcam.
+It uses OpenCV for capturing video frames and the FER (Facial Emotion Recognition) library to identify emotions such as:
 
-🗣️ talker.py → Publishes messages
+😄 Happy    😠 Angry    😢 Sad    😐 Neutral    😲 Surprise
 
-👂 listener.py → Subscribes and listens to messages
-
-🧩 Nodes Description
-🗣️ talker.py
-
-Publishes text messages of type std_msgs.msg.String to a topic named "topic" at regular intervals.
-
-👂 listener.py
-
-Subscribes to the same topic ("topic") and prints the messages it receives from the talker.
-Concepts Used
-
-ROS2 Node creation
-
-Publisher and Subscriber setup
-
-Topic-based communication
-
-Callback functions in Python
-
-Message passing using std_msgs.msg.String
-
+The result is displayed live on the video feed with the emotion label and confidence score.
 ⚙️ Requirements
 
-ROS2 (Humble / Iron / Jazzy or compatible version)
+Make sure you have Python 3.8+ installed.
 
-Python 3.x
+Install the required libraries using:
 
-Properly sourced ROS2 environment
+pip install opencv-python fer
+
+💻 How to Run
+
+Clone this repository:
+
+git clone https://github.com/yourusername/emotion-detector.git
+cd emotion-detector
+
+Run the script:
+
+python simple_emotion.py
+
+
+Wait for the webcam window to open.
+Press ‘q’ anytime to exit.
+
+How It Works
+
+The script captures frames from your webcam using OpenCV.
+
+The FER library detects faces and predicts the dominant emotion.
+
+The detected emotion and confidence score are:
+
+Displayed on the frame
+
+Printed in the terminal
+
+Example output:
+
+happy (0.95)
+neutral (0.87)
+sad (0.72)
