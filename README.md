@@ -17,9 +17,7 @@ pip install opencv-python fer
 
 💻 How to Run
 
-Clone this repository:
-
-git clone https://github.com/yourusername/emotion-detector.git
+Clone this repository
 cd emotion-detector
 
 Run the script:
